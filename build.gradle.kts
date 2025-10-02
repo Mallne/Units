@@ -22,7 +22,7 @@ versionCatalogUpdate {
     versionSelector(VersionSelectors.STABLE)
 }
 
-group = "cloud.mallne.dicentra.areaassist"
+group = "cloud.mallne"
 version = "1.0.0-SNAPSHOT"
 
 kotlin {
