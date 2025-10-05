@@ -38,7 +38,7 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
     linuxX64()
-    jvmToolchain(17)
+    jvmToolchain(21)
 
     sourceSets {
         val commonMain by getting {
