@@ -1,6 +1,7 @@
 package cloud.mallne.units
 
 import cloud.mallne.units.Angle.Companion.degrees
+import kotlinx.serialization.Serializable
 import kotlin.math.PI
 
 /**
@@ -36,6 +37,7 @@ open class Angle(suffix: String, ratio: Double = 1.0, databasePrimitive: String)
         fun acosh(value: Double) = kotlin.math.acosh(value) * radians
         fun atanh(value: Double) = kotlin.math.atanh(value) * radians
 
+        @Serializable
         enum class UnitStore(override val unit: Angle) : IUnitStore<Angle> {
             RADIANS(unit = radians),
             DEGREES(unit = degrees);

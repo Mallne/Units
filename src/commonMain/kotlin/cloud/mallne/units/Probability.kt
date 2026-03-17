@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -15,7 +17,7 @@ open class Probability(suffix: String, ratio: Double = 1.0, databasePrimitive: S
         val percentmille = Probability("pcm", 0.00001, "percentmille")
         val permillion = Probability("ppm", 0.000001, "permillion")
 
-
+        @Serializable
         enum class UnitStore(override val unit: Probability) : IUnitStore<Probability> {
             DECIMAL(unit = decimal),
             PERCENT(unit = percent),

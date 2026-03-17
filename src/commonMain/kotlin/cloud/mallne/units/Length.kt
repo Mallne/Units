@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -28,6 +30,7 @@ open class Length(suffix: String, ratio: Double = 1.0, databasePrimitive: String
             )
         )
 
+        @Serializable
         enum class UnitStore(override val unit: Length) :
             IUnitStore<Length> {
             MILES(unit = miles),

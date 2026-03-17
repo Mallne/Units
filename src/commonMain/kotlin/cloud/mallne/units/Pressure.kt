@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units to measure time durations.
  */
@@ -16,6 +18,7 @@ open class Pressure(suffix: String, ratio: Double = 1.0, databasePrimitive: Stri
         val atmosphere = Pressure("atm", ratio = 101325.0, databasePrimitive = "atmosphere")
         val bar = Pressure("bar", ratio = 100000.0, databasePrimitive = "bar")
 
+        @Serializable
         enum class UnitStore(override val unit: Pressure) : IUnitStore<Pressure> {
             PASCAL(unit = pascal),
             MEGAPASCAL(unit = megapascal),

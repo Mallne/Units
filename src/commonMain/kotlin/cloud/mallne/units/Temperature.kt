@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units to measure time durations.
  */
@@ -10,6 +12,7 @@ open class Temperature(suffix: String, ratio: Double = 1.0, databasePrimitive: S
     companion object {
         val celsius = Temperature("°C", databasePrimitive = "celsius")
 
+        @Serializable
         enum class UnitStore(
             override val unit: Temperature,
         ) : IUnitStore<Temperature> {

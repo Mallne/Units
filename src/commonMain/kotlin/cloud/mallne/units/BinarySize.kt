@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units to measure computer storage, bandwidth, etc..
  */
@@ -41,6 +43,7 @@ class BinarySize(suffix: String, ratio: Double = 1.0, databasePrimitive: String)
             )
         )
 
+        @Serializable
         enum class UnitStore(override val unit: BinarySize) : IUnitStore<BinarySize> {
             BYTES(unit = bytes),
             KILOBYTES(unit = kilobytes),

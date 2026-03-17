@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -21,6 +23,7 @@ open class Volume(suffix: String, ratio: Double = 1.0, databasePrimitive: String
         val cubicMeters = Volume("m³", 1000.0, "cubicMeters")
         val cubicKilometers = Volume("km³", 1e9, "cubicKilometers")
 
+        @Serializable
         enum class UnitStore(override val unit: Volume) : IUnitStore<Volume> {
             LITERS(unit = liters),
             MILLILITERS(unit = milliliters),

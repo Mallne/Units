@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -18,6 +20,7 @@ open class Area(suffix: String, ratio: Double = 1.0, databasePrimitive: String) 
         val hectare = Area("ha", 1 * squareHectometer `in` squareMeters, "hectare")
         val squareKilometers = Area("km²", 1000000.0, "squareKilometers")
 
+        @Serializable
         enum class UnitStore(override val unit: Area) :
             IUnitStore<Area> {
             SQUAREMILLIMETERS(unit = squareMillimeters),

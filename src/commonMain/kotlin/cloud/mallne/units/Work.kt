@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -15,6 +17,7 @@ open class Work(suffix: String, ratio: Double = 1.0, databasePrimitive: String) 
         val kilowattHours = Work("kWh", 1.0 / 3.6e6, databasePrimitive = "kilowattHours")
         val megawattHours = Work("MWh", 1.0 / 3.6e9, databasePrimitive = "megawattHours")
 
+        @Serializable
         enum class UnitStore(override val unit: Work) :
             IUnitStore<Work> {
             JOULES(joules),

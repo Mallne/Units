@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for measuring graphics display distances (i.e. distances on the surface of a display).
  */
@@ -11,6 +13,7 @@ open class GraphicsLength(suffix: String, ratio: Double = 1.0, databasePrimitive
         /** 1 * pixels is the size of a single pixel on a display. */
         val pixels = GraphicsLength("px", databasePrimitive = "pixels")
 
+        @Serializable
         enum class UnitStore(override val unit: GraphicsLength) : IUnitStore<GraphicsLength> {
             PIXELS(unit = pixels),
         }

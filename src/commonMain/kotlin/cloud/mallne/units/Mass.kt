@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units to measure how much matter is in an object.
  */
@@ -11,6 +13,7 @@ open class Mass(suffix: String, ratio: Double = 1.0, databasePrimitive: String) 
         val kilograms = Mass("kg", databasePrimitive = "kilograms")
         val grams = Mass("g", 1.0 / 1000, "grams")
 
+        @Serializable
         enum class UnitStore(override val unit: Mass) : IUnitStore<Mass> {
             KILOGRAMS(unit = kilograms),
             GRAMS(unit = grams),

@@ -1,5 +1,7 @@
 package cloud.mallne.units
 
+import kotlinx.serialization.Serializable
+
 /**
  * Units for length or distance.
  */
@@ -12,6 +14,7 @@ open class WoodVolume(suffix: String, ratio: Double = 1.0, databasePrimitive: St
         val raummeter = WoodVolume("rm", 1 / 1.4, "raummeter")
         val schuettraummeter = WoodVolume("srm", 1 / 2.3, "schuettraummeter")
 
+        @Serializable
         enum class UnitStore(override val unit: WoodVolume) : IUnitStore<WoodVolume> {
             FESTMETER(unit = festmeter),
             RAUMMETER(unit = raummeter),
