@@ -1,14 +1,14 @@
 [versions]
 # @pin
-agp = "8.13.2"
+agp = "9.0.0"
 # @keep
-android-compileSdk = "36"
+android-compileSdk = "37"
 # @keep
 android-minSdk = "24"
-ben-manes-versions-v = "0.53.0"
-dependency-analysis-v = "3.6.1"
-kotlin = "2.3.20"
-serialization = "1.10.0"
+ben-manes-versions-v = "0.54.0"
+dependency-analysis-v = "3.10.0"
+kotlin = "2.3.21"
+serialization = "1.11.0"
 version-catalog-update-v = "1.1.0"
 
 [libraries]
