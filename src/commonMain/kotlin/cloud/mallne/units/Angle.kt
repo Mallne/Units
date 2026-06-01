@@ -72,7 +72,3 @@ fun Measure<Angle>.normalizeGeo(): Measure<Angle> {
 
     return result * degrees
 }
-
-fun Measure<Angle>.deltaTo(other: Measure<Angle>): Measure<Angle> {
-    return (other - this).normalize()
-}
