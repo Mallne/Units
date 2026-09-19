@@ -26,7 +26,7 @@ versionCatalogUpdate {
 }
 
 group = "cloud.mallne"
-version = "1.0.0-SNAPSHOT"
+version = project.findProperty("VERSION_NAME") ?: "1.0.0-SNAPSHOT"
 
 kotlin {
     jvm()
@@ -94,7 +94,9 @@ mavenPublishing {
         }
     }
 
-    signAllPublications()
+    if (project.findProperty("dc.signingKey") != null) {
+        signAllPublications()
+    }
 
-    coordinates(group.toString(), project.name, version.toString())
+    coordinates(group.toString(), project.name)
 }
