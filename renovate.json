@@ -15,9 +15,9 @@
   },
   "packageRules": [
     {
-      "allowedVersions": "/^[0-9]+\\\\.[0-9]+\\\\.[0-9]+$/",
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(-(?<build>\\d+)-build\\.(?<hash>\\w+))?$",
       "matchPackageNames": [
-        "cloud.mallne{/,}**"
+        "cloud.mallne**"
       ]
     }
   ]
