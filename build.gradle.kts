@@ -65,38 +65,25 @@ kotlin {
 
 
 mavenPublishing {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                groupId = project.group.toString()
-                artifactId = project.name
-                version = project.version.toString()
-
-                pom {
-                    name = "Units"
-                    inceptionYear = "2025"
-                    developers {
-                        developer {
-                            name = "Mallne"
-                            url = "mallne.cloud"
-                        }
-                    }
-                }
-            }
-        }
-
-        repositories {
-            maven {
-                name = "DiCentraArtefacts"
-                url = uri("https://registry.mallne.cloud/repository/DiCentraArtefacts/")
-                credentials {
-                    username = providers.environmentVariable("NEXUS_USERNAME").getOrElse("")
-                    password = providers.environmentVariable("NEXUS_PASSWORD").getOrElse("")
-                }
+    coordinates(group.toString(), project.name)
+    pom {
+        name = "Units"
+        inceptionYear = "2025"
+        developers {
+            developer {
+                name = "Mallne"
+                url = "mallne.cloud"
             }
         }
     }
-
-
-    coordinates(group.toString(), project.name)
+    repositories {
+        maven {
+            name = "DiCentraArtefacts"
+            url = uri("https://registry.mallne.cloud/repository/DiCentraArtefacts/")
+            credentials {
+                username = providers.environmentVariable("NEXUS_USERNAME").getOrElse("")
+                password = providers.environmentVariable("NEXUS_PASSWORD").getOrElse("")
+            }
+        }
+    }
 }
