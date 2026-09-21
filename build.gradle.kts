@@ -65,6 +65,19 @@ kotlin {
 
 
 mavenPublishing {
+    publishing {
+        repositories {
+            maven {
+                name = "DiCentraArtefacts"
+                url = uri("https://registry.mallne.cloud/repository/DiCentraArtefacts/")
+                credentials {
+                    username = providers.environmentVariable("NEXUS_USERNAME").getOrElse("")
+                    password = providers.environmentVariable("NEXUS_PASSWORD").getOrElse("")
+                }
+            }
+        }
+    }
+
     coordinates(group.toString(), project.name)
     pom {
         name = "Units"
@@ -73,16 +86,6 @@ mavenPublishing {
             developer {
                 name = "Mallne"
                 url = "mallne.cloud"
-            }
-        }
-    }
-    repositories {
-        maven {
-            name = "DiCentraArtefacts"
-            url = uri("https://registry.mallne.cloud/repository/DiCentraArtefacts/")
-            credentials {
-                username = providers.environmentVariable("NEXUS_USERNAME").getOrElse("")
-                password = providers.environmentVariable("NEXUS_PASSWORD").getOrElse("")
             }
         }
     }
