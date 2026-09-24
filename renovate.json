@@ -28,7 +28,7 @@
         "maven"
       ],
       "matchPackageNames": [
-        "/^cloud\\.mallne\\./"
+        "cloud.mallne**"
       ],
       "registryUrls": [
         "https://registry.mallne.cloud/repository/DiCentraArtefacts/"
